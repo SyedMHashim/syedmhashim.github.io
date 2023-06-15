@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap');
+
+h1,h2, h3 {
+    text-transform: uppercase;
+    color: #72BB94;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+body h2 {
+    border-top: solid 2px #72BB94;
+    border-bottom: solid 2px #72BB94;
+    padding: 5px 0;
+}
+
+span.green, a {
+	color: #72BB94;
+}
+
+span.green {
+    font-weight: bold;
+}
+
+body {
+    font-size: 1.3rem;
+    font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace;
+    width:80%;
+    margin: 0 auto;
+    background-color: #1d212c;
+    color: #fff;
+    letter-spacing: -0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "liga", "tnum", "zero", "ss01", "locl";
+    font-variant-ligatures: contextual;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.54;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+footer {
+    padding: 20px;
+  }
+
+#header_block {
+    width:100%;
+    text-align: center;
+    color:white;
+    padding: 20px 10px;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+ul.navigation li {
+    display: inline-block;
+
+}
+
+ul.navigation li a {
+    text-decoration: none;
+    color: #72BB94;
+    padding:10px;
+    border-radius:4px;
+}
+
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+img[alt="me"] {
+    display:none;
+}
+
+img.me {
+    border-radius:50%;
+    border: solid 5px  #72BB94;
+    height:250px;
+    margin:10px;
+}
+
+img {
+    float:right;
+    height: 250px;
+}
+
+ul.navigation {
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+p.deploy_message {
+    font-style: italic;
+}
+
+.md {
+    display: none;
+}

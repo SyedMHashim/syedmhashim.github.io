@@ -1,0 +1,11 @@
+---
+- name: Convert {{ markdown_file }} to html
+  command: python3 {{ python_file }} {{ markdown_file }}
+  register: output
+
+- name: Save as html file
+  copy:
+    content: "{{ lookup('template', 'default_template.html.j2') }}"
+    dest: "{{ html_file }}"
+  vars:
+    html_body: "{{ output.stdout }}"

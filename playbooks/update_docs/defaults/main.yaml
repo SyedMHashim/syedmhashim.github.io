@@ -1,0 +1,6 @@
+---
+
+root_dir: ".."
+guides_dir: "{{ root_dir }}/guides"
+docs_dir: "{{ root_dir }}/docs"
+python_file: "{{ root_dir }}/scripts/convert_markdown_to_html.py"
