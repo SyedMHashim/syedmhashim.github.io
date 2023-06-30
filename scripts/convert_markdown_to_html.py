@@ -5,8 +5,8 @@ import markdown
 
 
 def convert(file_name):
-    """ 
-    Convert a Markdown file into HTML file, 
+    """
+    Convert a Markdown file into HTML file,
     where `file_name` is the path to the Markdown file to be converted.
     """
     with open(file_name, "r", encoding="UTF-8") as file:
