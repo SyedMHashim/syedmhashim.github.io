@@ -1,11 +1,16 @@
+""" Script to convert Markdown files into HTML files"""
 import sys
+
 import markdown
 
 
 def convert(file_name):
-    # Load Markdown content
-    with open(file_name, "r", encoding="UTF-8") as f:
-        text = f.read()
+    """
+    Convert a Markdown file into HTML file,
+    where `file_name` is the path to the Markdown file to be converted.
+    """
+    with open(file_name, "r", encoding="UTF-8") as file:
+        text = file.read()
         html = markdown.markdown(
             text,
             extensions=[
@@ -23,10 +28,10 @@ def convert(file_name):
         ]
         for fix_item in fix_list:
             html = html.replace(fix_item[0], fix_item[1])
-      
+
         return html
 
 
 if __name__ == "__main__":
-    file_name = sys.argv[1]
-    print(convert(file_name))
+    FILE_NAME = sys.argv[1]
+    print(convert(FILE_NAME))
