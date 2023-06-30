@@ -1,0 +1,32 @@
+---
+- name: Find all files ending with .md within the {{page}} directory
+  find:
+    paths: "{{ page }}"
+    patterns: '*.md'
+    recurse: true
+  register: matched
+
+- name: Create pages directory within docs directory if it does not exist
+  file:
+    path: "{{ docs_dir }}/pages/{{ page }}"
+    state: directory
+    mode: '0755'
+
+- name: Convert all Markdown files to html
+  include_tasks: convert_markdown_to_html.yaml
+  vars:
+    markdown_file: "{{ item.path }}"
+    html_file: "{{ docs_dir }}/pages/{{ item.path | replace('.md', '.html') }}"
+  with_items: "{{ matched.files }}"
+
+- name: Extract file names
+  set_fact:
+    file_names: "{{ matched.files | map(attribute='path') | map('regex_replace', '.*/([^/]+)\\.md$', '\\1') | list }}"
+
+- name: Update page index file
+  copy:
+    content: "{{ lookup('template', 'template.html.j2') }}"
+    dest: "{{ docs_dir }}/pages/{{ page }}/index.html"
+  vars:
+    page_header: "{{ page | split('/') | last }}" 
+    pages: "{{ file_names }}"

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Syed Muhammad Hashim</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/static/styles.css' />
+        <link rel='stylesheet' href='/static/mobile.css' />
+    </head>
+
+    <body>
+        <div id="under_construction">
+            This site is currently under construction
+        </div>
+
+        <header>   
+            <img class="me" src="/img/hashim.png" />
+
+            <h2>Syed Muhammad Hashim</h2>
+            <h3>Software Engineer | DevOps | Kubernetes | AWS | GoLang | Python</h3>
+            <ul class="navigation">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/projects">Projects</a></li>                    
+                <li><a href="/pages/guides">Guides</a></li>
+                <li><a target="_blank"
+                        href="https://www.credly.com/users/syed-hashim.fcd7e428/badges">Credly <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a target="_blank" href="https://github.com/syedmhashim">Github <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/syedmhashim/"> LinkedIn <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            {% if html_body is defined %}
+                {{ html_body }}
+            {% elif page_header is defined and pages is defined %}
+                <h2>{{ page_header }}</h2>
+                <ul>
+                {% for page in pages %}
+                    <li><a href={{ page }}.html>{{ page }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <footer>
+            <p class="deploy_message">
+                This site has been generated and deployed from Github repository <a href="https://github.com/syedmhashim/syedmhashim.github.io" target="_blank">syedmhashim/syedmhashim.github.io</a>
+            </p>
+        </footer>
+    </body>
+</html>
