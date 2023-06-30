@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  readme:
-    container_name: "tjth_readme"
+  website:
+    container_name: "hashim_website"
     image: "httpd:2.4"
     volumes:
       - "./docs:/usr/local/apache2/htdocs"
